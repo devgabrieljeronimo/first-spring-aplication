@@ -17,7 +17,6 @@ public class Product {
     private Long price;
 
     public Product() {
-
     }
 
     public Integer getId() {
