@@ -1,0 +1,5 @@
+CREATE TABLE product (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOTNULL,
+    price BIGINT NOTNULL
+);
