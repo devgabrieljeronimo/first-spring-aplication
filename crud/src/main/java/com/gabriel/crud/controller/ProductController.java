@@ -24,6 +24,14 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity getById(@PathVariable(value = "id") Integer id) {
+        if(repository.findById(id).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
+        }
+        return ResponseEntity.status(HttpStatus.FOUND).body(repository.findById(id));
+    }
+
     @PostMapping
     public ResponseEntity save(@RequestBody ProductDto dto) {
         var product = new Product();
