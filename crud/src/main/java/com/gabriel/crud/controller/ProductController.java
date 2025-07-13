@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -26,10 +27,13 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable(value = "id") Integer id) {
-        if(repository.findById(id).isEmpty()) {
+        Optional<Product> product = repository.findById(id);
+        if(product.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
         }
-        return ResponseEntity.status(HttpStatus.FOUND).body(repository.findById(id));
+        else {
+            return ResponseEntity.status(HttpStatus.FOUND).body(repository.findById(id));
+        }
     }
 
     @PostMapping
@@ -37,5 +41,17 @@ public class ProductController {
         var product = new Product();
         BeanUtils.copyProperties(dto, product);
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(product));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable(value = "id") Integer id) {
+        Optional<Product> product = repository.findById(id);
+        if(product.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
+        }
+        else {
+            repository.delete(product.get());
+            return ResponseEntity.status(HttpStatus.OK).body("Product deleted");
+        }
     }
 }
