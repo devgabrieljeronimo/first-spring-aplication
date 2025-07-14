@@ -1,6 +1,5 @@
 package com.gabriel.crud.repositories;
 
-import com.gabriel.crud.dtos.ProductDto;
 import com.gabriel.crud.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
