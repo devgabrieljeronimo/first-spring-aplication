@@ -119,6 +119,9 @@ fabric.properties
 # Compiled class file
 *.class
 
+## Spring application.properties
+**/application.properties
+
 # Log file
 *.log
 
