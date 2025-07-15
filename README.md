@@ -6,12 +6,13 @@
 
 <br/>
 
-## 🚀 Technologies
+## 🚀 Technologies used
 
 - Java 21
 - Spring Boot
 - Spring Web
 - Spring Data JPA
+- Spring DevTools
 - Flyway
 - PostgreSQL
 - Maven
@@ -23,17 +24,41 @@
 1. Clone the repository:
 
 ```bash
-git clone
+git clone https://github.com/devgabrieljeronimo/first-spring-aplication.git
 ```
 
 <br/>
 
-## 📬 Endpoints da API
-Método	Rota	Descrição
-GET	/products	Lista todos os produtos
-POST	/products	Cria um novo produto
-PUT	/products/{id}	Atualiza um produto existente
-DELETE	/products/{id}	Deleta um produto
+## 📬 Endpoints of the API
+
+Below you can see every endpoint of my project:
+| Method    | Route           | Description                   |
+|-----------|-----------------|-------------------------------|
+| GET       | /products       | List every products           |
+| GET(byID) | /products/{id}  | List a product                |
+| POST      | /products       | Create a new product          |
+| PUT       | /products/{id}  | Update a product existing     |
+| DELETE    | /products/{id}  | Delete a product              |
+
+<br/>
+
+## 🗃️ Flyway migrations
+
+Flyway is a tool that versions and updates the database automatically with SQL scripts.
+
+The migrations stay on the paste:
+```css
+src/main/resources/db/migration/
+```
+
+The project will starts with V1__create-table-product.sql:
+```sql
+CREATE TABLE product (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  price BIGINT NOT NULL
+);
+```
 
 <br/>
 
