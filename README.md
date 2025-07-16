@@ -1,3 +1,10 @@
+<div align="left">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT-license">
+  <img src="https://img.shields.io/badge/Java-21-blue.svg" alt="Java-version">
+  <img src="https://img.shields.io/github/issues/devgabrieljeronimo/first-spring-aplication" alt="Issues">
+
+<div/>
+  
 # 📦 First Spring Application
 
 <div align="center">
