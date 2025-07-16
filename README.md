@@ -62,6 +62,12 @@ CREATE TABLE product (
 
 <br/>
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/devgabrieljeronimo/first-spring-aplication/blob/main/LICENSE) file for details.
+
+<br/>
+
 ## 🙋‍♂️ Owner
 Gabriel Jeronimo
 
