@@ -36,6 +36,34 @@ git clone https://github.com/devgabrieljeronimo/first-spring-aplication.git
 
 <br/>
 
+2. Create a PostgreSQL database, like this:
+
+```sql
+CREATE DATABASE product-api;
+```
+If you don't have the PostgreSQL, you can download [here](https://www.postgresql.org/download/).
+
+<br/>
+
+3. Open the project in an IDE(Intellij, Eclipse, NetBeans).
+
+<br/>
+
+4. Open the ```application-example.properties``` in:
+
+```css
+src/main/resources/application-example.properties
+```
+Rename to ```application.properties```, and put your database url, username and password, inside the file exist more instructions.
+
+<br/>
+
+5. If you already finished all, you can run the project.
+   
+    note: you don't need to create a table for products, the FlyWay will do it for you.
+
+<br/>
+
 ## 📬 Endpoints of the API
 
 Below you can see every endpoint of my project:
@@ -46,6 +74,8 @@ Below you can see every endpoint of my project:
 | POST      | /products       | Create a new product          |
 | PUT       | /products/{id}  | Update a product existing     |
 | DELETE    | /products/{id}  | Delete a product              |
+
+You can test the endpoints with [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
 
 <br/>
 
@@ -69,7 +99,7 @@ CREATE TABLE product (
 
 <br/>
 
-## License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/devgabrieljeronimo/first-spring-aplication/blob/main/LICENSE) file for details.
 
